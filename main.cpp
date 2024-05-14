@@ -7,6 +7,10 @@ int PlayerX = 1;
 int PlayerY = 1;
 char PlayerShape = 'p';
 
+int MonsterX = 5;
+int MonsterY = 5;
+char MonsterShape = 'M';
+
 int GoalX = 8;
 int GoalY = 8;
 char GoalShape = 'G';
@@ -76,6 +80,14 @@ void Render()
 			{
 				cout << GoalShape;
 			}
+			else if (MonsterX == X && MonsterY == Y)
+			{
+				cout << MonsterShape;
+			}
+			else if (MonsterX == PlayerX && MonsterY == PlayerY)
+			{
+				IsRunning = false;
+			}
 			else if (PlayerX == GoalX && PlayerY == GoalY)
 			{
 				IsRunning = false;
@@ -88,6 +100,7 @@ void Render()
 			{
 				cout << WallShape;
 			}
+
 		}
 		cout << endl;
 	}
